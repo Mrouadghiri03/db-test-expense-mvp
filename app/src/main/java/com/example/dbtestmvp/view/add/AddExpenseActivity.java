@@ -1,6 +1,8 @@
 package com.example.dbtestmvp.view.add;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -10,18 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.dbtestmvp.MyApplication;
 import com.example.dbtestmvp.R;
 import com.example.dbtestmvp.presenter.AddExpensePresenter;
+import com.example.dbtestmvp.view.list.ExpenseListActivity;
 
 import javax.inject.Inject;
 
 public class AddExpenseActivity extends AppCompatActivity implements AddExpenseContract.View {
 
     private EditText etTitle, etAmount;
-    private Button btnAdd;
+    private Button btnAdd,btnToList;
 
     @Inject
     AddExpensePresenter presenter;
 
-   /* @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
@@ -35,14 +38,24 @@ public class AddExpenseActivity extends AppCompatActivity implements AddExpenseC
         etTitle = findViewById(R.id.etTitle);
         etAmount = findViewById(R.id.etAmount);
         btnAdd = findViewById(R.id.btnAdd);
+        btnToList=findViewById(R.id.btnGoToList);
+
 
         // Attacher la view au presenter
         presenter.attachView(this);
 
         btnAdd.setOnClickListener(v -> presenter.onAddClicked());
+
+        btnToList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AddExpenseActivity.this, ExpenseListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    */
+
 
     @Override
     public void showMessage(String message) {

@@ -1,10 +1,10 @@
 package com.example.dbtestmvp.di;
 
 
-import com.example.dbtestmvp.view.add.AddExpenseActivity;
-
-
 import javax.inject.Singleton;
+
+import com.example.dbtestmvp.view.add.AddExpenseActivity;
+import com.example.dbtestmvp.view.list.ExpenseListActivity;
 import dagger.Component;
 
 @Singleton
@@ -12,4 +12,6 @@ import dagger.Component;
 public interface AppComponent {
 
     void inject(AddExpenseActivity activity);
+
+    void inject(ExpenseListActivity activity);
 }

@@ -17,7 +17,7 @@
             android:theme="@style/Theme.DBTestMVP"
             tools:targetApi="31">
         <activity
-                android:name=".view.add.AddExpenseActivity"
+                android:name=".view.list.ExpenseListActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

@@ -21,7 +21,7 @@ public class AddExpenseActivity extends AppCompatActivity implements AddExpenseC
     @Inject
     AddExpensePresenter presenter;
 
-    @Override
+   /* @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_expense);
@@ -41,6 +41,8 @@ public class AddExpenseActivity extends AppCompatActivity implements AddExpenseC
 
         btnAdd.setOnClickListener(v -> presenter.onAddClicked());
     }
+
+    */
 
     @Override
     public void showMessage(String message) {

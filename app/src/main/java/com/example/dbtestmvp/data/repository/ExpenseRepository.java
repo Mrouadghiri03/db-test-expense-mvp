@@ -21,5 +21,7 @@ public class ExpenseRepository {
         expenseDao.insert(expense);
     }
 
-
+    public List<Expense> getExpenses(){
+        return  expenseDao.getAllExpenses();
+    }
 }

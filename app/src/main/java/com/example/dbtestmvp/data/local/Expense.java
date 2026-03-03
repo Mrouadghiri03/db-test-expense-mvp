@@ -69,4 +69,11 @@ public class Expense {
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
+
+    public void delete(Expense expense) {
+    }
+    @Override
+    public String toString() {
+        return "Titre: " + title + ", Montant: " + amount + "€, Date: " + timestamp;
+    }
 }

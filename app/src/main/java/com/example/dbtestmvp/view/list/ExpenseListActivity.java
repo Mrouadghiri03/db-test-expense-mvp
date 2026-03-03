@@ -61,7 +61,8 @@ public class ExpenseListActivity extends AppCompatActivity implements ExpenseLis
 
     @Override
     public void showExpenses(List<Expense> expenses) {
-        adapter = new ExpenseAdapter(expenses);
+        //adapter = new ExpenseAdapter(expenses);
+        adapter = new ExpenseAdapter(expenses, expense -> presenter.delete(expense));
         recyclerView.setAdapter(adapter);
 
     }
@@ -70,6 +71,6 @@ public class ExpenseListActivity extends AppCompatActivity implements ExpenseLis
     //ajouter la date pour chaque transaction 
     @Override
     public void showTotal(Double total) {
-        tvTotalAmount.setText(String.format("%.2f €", total));
+        tvTotalAmount.setText(String.format("%.2f MAD", total));
     }
 }

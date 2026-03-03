@@ -35,4 +35,11 @@ public class ExpenseListPresenter implements ExpenseListContract.Presenter {
         double totalExpenses=expenses.stream().mapToDouble(Expense::getAmount).sum();
         return totalExpenses;
     }
+
+    @Override
+    public void delete(Expense expense) {
+        repository.delete(expense);  // Appelle DAO
+        loadExpenses(); // Recharge la liste
+        totalExpenses();    // Met à jour le total
+    }
 }

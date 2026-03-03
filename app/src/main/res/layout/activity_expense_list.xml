@@ -19,36 +19,42 @@
             app:navigationIcon="@drawable/ic_menu"
             app:menu="@menu/main_menu" />
 
-    <!-- Stats rapides -->
+    <!-- Stats rapides avec Total stylé -->
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp"
-            android:weightSum="2">
+            android:gravity="center_horizontal">
 
         <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/primary_light">
+                android:layout_margin="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/white"
+                android:foreground="?attr/selectableItemBackground"
+                android:clipToPadding="false">
 
+            <!-- Dégradé subtil derrière le total -->
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:padding="16dp">
+                    android:padding="24dp"
+                    android:background="@drawable/gradient_total">
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total"
                         android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.05"
+                        android:gravity="center" />
 
                 <TextView
                         android:id="@+id/tvTotalAmount"
@@ -56,42 +62,16 @@
                         android:layout_height="wrap_content"
                         android:text="0 €"
                         android:textColor="@color/primary_color"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:shadowColor="#55000000"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="4" />
 
-        <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/secondary_light">
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nombre"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="14sp" />
-
-                <TextView
-                        android:id="@+id/tvExpenseCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/secondary_color"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>

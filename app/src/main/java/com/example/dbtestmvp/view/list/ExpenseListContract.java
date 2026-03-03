@@ -18,6 +18,9 @@ public interface ExpenseListContract {
 
         //void loadTotal();
 
+        void delete(Expense expense);
+
+
 
     }
 }

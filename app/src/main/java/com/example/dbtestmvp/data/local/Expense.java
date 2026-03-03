@@ -1,11 +1,16 @@
 package com.example.dbtestmvp.data.local;
 
 
+import android.os.Build;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(tableName = "expenses")
 @Data
@@ -18,6 +23,8 @@ public class Expense {
 
     private String title;
     private double amount;
+    //private LocalDateTime dateTime;
+    private long timestamp;//kaytstoka b ms
 
     public int getId() {
         return id;
@@ -34,6 +41,11 @@ public class Expense {
     public Expense(String title, double amount) {
         this.title = title;
         this.amount = amount;
+
+
+       this.timestamp=System.currentTimeMillis();
+
+
     }
 
     public void setId(int id) {
@@ -50,6 +62,11 @@ public class Expense {
 //getters w setters mn 3nd lambook
 
 
+    public long getTimestamp() {
+        return timestamp;
+    }
 
-
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
+    }
 }

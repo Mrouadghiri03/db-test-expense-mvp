@@ -28,6 +28,8 @@ public class AddExpensePresenter implements AddExpenseContract.Presenter {
         double amount = Double.parseDouble(view.getAmountInput());
 
         repository.addExpense(new Expense(title, amount));
+        view.setTitleInput();
+        view.setAmountInput();
         view.showMessage("Expense Added");
     }
 }

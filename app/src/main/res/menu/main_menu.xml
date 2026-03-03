@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Item de recherche -->
+    <item
+            android:id="@+id/action_search"
+            android:title="Rechercher"
+            android:icon="@drawable/ic_search"
+            app:showAsAction="ifRoom|collapseActionView"
+            app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <!-- Item de filtre -->
+    <item
+            android:id="@+id/action_filter"
+            android:title="Filtrer"
+            android:icon="@drawable/ic_filter"
+            app:showAsAction="ifRoom" />
+
+    <!-- Sous-menu de tri -->
+    <item
+            android:id="@+id/action_sort"
+            android:title="Trier par"
+            app:showAsAction="never">
+
+        <menu>
+            <item
+                    android:id="@+id/action_sort_date"
+                    android:title="Date" />
+
+            <item
+                    android:id="@+id/action_sort_amount"
+                    android:title="Montant" />
+
+            <item
+                    android:id="@+id/action_sort_title"
+                    android:title="Titre" />
+        </menu>
+    </item>
+
+    <!-- Séparateur -->
+    <item
+            android:id="@+id/action_settings"
+            android:title="Paramètres"
+            android:icon="@drawable/ic_settings"
+            app:showAsAction="never" />
+
+    <!-- Item de déconnexion -->
+    <item
+            android:id="@+id/action_logout"
+            android:title="Déconnexion"
+            android:icon="@drawable/ic_logout"
+            app:showAsAction="never" />
+
+</menu>

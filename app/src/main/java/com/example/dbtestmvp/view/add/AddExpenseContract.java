@@ -6,6 +6,10 @@ public interface AddExpenseContract {
         void showMessage(String message);
         String getTitleInput();
         String getAmountInput();
+
+        void setTitleInput();
+
+        void setAmountInput();
     }
 
     interface Presenter {

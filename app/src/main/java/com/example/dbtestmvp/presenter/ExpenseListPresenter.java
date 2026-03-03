@@ -26,5 +26,13 @@ public class ExpenseListPresenter implements ExpenseListContract.Presenter {
     public void loadExpenses() {
         List<Expense> expenses = repository.getExpenses();
         view.showExpenses(expenses);
+        view.showTotal(totalExpenses());
+    }
+
+    @Override
+    public double totalExpenses() {
+        List<Expense> expenses=repository.getExpenses();
+        double totalExpenses=expenses.stream().mapToDouble(Expense::getAmount).sum();
+        return totalExpenses;
     }
 }

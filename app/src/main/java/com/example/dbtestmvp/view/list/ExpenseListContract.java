@@ -7,9 +7,17 @@ public interface ExpenseListContract {
 
     interface View {
         void showExpenses(List<Expense> expenses);
+
+        void showTotal(Double total);
     }
 
     interface Presenter {
         void loadExpenses();
+
+        double totalExpenses();
+
+        //void loadTotal();
+
+
     }
 }

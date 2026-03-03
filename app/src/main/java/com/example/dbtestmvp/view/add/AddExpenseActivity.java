@@ -71,4 +71,18 @@ public class AddExpenseActivity extends AppCompatActivity implements AddExpenseC
     public String getAmountInput() {
         return etAmount.getText().toString();
     }
+
+    @Override
+    public void setTitleInput() {
+
+        etTitle.getText().clear();
+
+    }
+
+    @Override
+    public void setAmountInput() {
+        etAmount.getText().clear();
+    }
+
+
 }
